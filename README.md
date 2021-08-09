@@ -1,6 +1,5 @@
 # AlegzaAPI.NET
-
-Ez a csomag segít az Alegza CRM API-jának használatához PHP alól. Legalább PHP 7.0 szükséges hozzá.
+Ez a csomag segít az Alegza CRM API-jának használatához C# alól. Legalább .NET Core 3.1 szükséges hozzá, de .NET 5.0+ ajánlott.
 
 Licensz: [MIT](LICENSE.md)
 
