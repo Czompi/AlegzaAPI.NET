@@ -3,6 +3,12 @@
 	<PropertyGroup>
 		<TargetFramework>net5.0</TargetFramework>
 		<RootNamespace>AlegzaCRM.AlegzaAPI</RootNamespace>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<Authors>Czompi, aryxs3m</Authors>
+		<Company></Company>
+		<Description>Ez a nuget csomag segít az Alegza CRM API-jának használatához C# alól.</Description>
+		<RepositoryUrl>https://github.com/Czompi/AlegzaAPI.NET</RepositoryUrl>
+		<RepositoryType>GitHub</RepositoryType>
 	</PropertyGroup>
 
 </Project>
