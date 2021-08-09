@@ -1,4 +1,4 @@
-# alegza-crm-api
+# AlegzaAPI.NET
 
 Ez a csomag segít az Alegza CRM API-jának használatához PHP alól. Legalább PHP 7.0 szükséges hozzá.
 
