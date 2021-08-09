@@ -12,7 +12,7 @@ Kapcsolatfelvétel a csomag fejlesztőjével: [Czompi (Czompó Dávid)](mailto:c
 
 ## Telepítés
 A csomag a NuGet csomagkezelőben megtalálható, viszont telepíthető a NuGet csomag kezelő parancssorból is a
-```
+```powershell
 Install-Package {csomagnév-itt-lakik}
 ```
 parancs kiadásával.
