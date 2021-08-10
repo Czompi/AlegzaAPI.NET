@@ -2,7 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Net.Http.Json;
+using System.Reflection;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -32,6 +34,10 @@ namespace AlegzaCRM.AlegzaAPI
             Connection.BaseAddress = url;
             Connection.DefaultRequestHeaders.Authorization = new("Basic", Convert.ToBase64String(Encoding.ASCII.GetBytes($"{username}:{password}")));
             Connection.Timeout = TimeSpan.FromSeconds(timeout);
+
+            AssemblyName executingAssembly = Assembly.GetExecutingAssembly().GetName();
+            Connection.DefaultRequestHeaders.UserAgent.Clear();
+            Connection.DefaultRequestHeaders.UserAgent.ParseAdd($"{executingAssembly.Name}/{executingAssembly.Version:4}");
         }
 
         #region Személyek
