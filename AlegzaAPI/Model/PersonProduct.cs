@@ -2,14 +2,14 @@
 
 namespace AlegzaCRM.AlegzaAPI.Model
 {
-    public class Product : ProductType
+    public class PersonProduct : ProductType
     {
 
         [JsonPropertyName("type")]
-        public int Type { get; set; }
+        public ProductType Type { get; set; }
 
         [JsonPropertyName("provider")]
-        public int Provider { get; set; }
+        public ProductProvider Provider { get; set; }
 
         [JsonPropertyName("value")]
         public int Value { get; set; }

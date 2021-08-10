@@ -1,4 +1,6 @@
-﻿using System.Text.Json.Serialization;
+﻿using AlegzaCRM.AlegzaAPI.Util;
+using System;
+using System.Text.Json.Serialization;
 
 namespace AlegzaCRM.AlegzaAPI.Model
 {
@@ -23,6 +25,7 @@ namespace AlegzaCRM.AlegzaAPI.Model
         public string InCalendar { get; set; }
 
         [JsonPropertyName("deleted_at")]
-        public string DeletedAt { get; set; }
+        [JsonConverter(typeof(JsonStringDateTimeConverter))]
+        public DateTime? DeletedAt { get; set; }
     }
 }

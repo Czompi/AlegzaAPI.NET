@@ -1,4 +1,6 @@
-﻿using System.Text.Json.Serialization;
+﻿using AlegzaCRM.AlegzaAPI.Util;
+using System;
+using System.Text.Json.Serialization;
 
 namespace AlegzaCRM.AlegzaAPI.Model
 {
@@ -8,13 +10,16 @@ namespace AlegzaCRM.AlegzaAPI.Model
         public int Id { get; set; }
 
         [JsonPropertyName("created_at")]
-        public string CreatedAt { get; set; }
+        [JsonConverter(typeof(JsonStringDateTimeConverter))]
+        public DateTime? CreatedAt { get; set; }
 
         [JsonPropertyName("updated_at")]
-        public string UpdatedAt { get; set; }
+        [JsonConverter(typeof(JsonStringDateTimeConverter))]
+        public DateTime? UpdatedAt { get; set; }
 
         [JsonPropertyName("deleted_at")]
-        public string DeletedAt { get; set; }
+        [JsonConverter(typeof(JsonStringDateTimeConverter))]
+        public DateTime? DeletedAt { get; set; }
 
         [JsonPropertyName("name")]
         public string Name { get; set; }

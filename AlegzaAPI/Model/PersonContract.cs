@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace AlegzaCRM.AlegzaAPI.Model
 {
-    public class Contract : AlegzaModel
+    public class PersonContract : AlegzaModel
     {
         [JsonPropertyName("id")]
         public int Id { get; set; }
@@ -30,7 +30,7 @@ namespace AlegzaCRM.AlegzaAPI.Model
         public int Person { get; set; }
 
         [JsonPropertyName("product")]
-        public int Product { get; set; }
+        public PersonProduct Product { get; set; }
 
         [JsonPropertyName("notes")]
         public string Notes { get; set; }

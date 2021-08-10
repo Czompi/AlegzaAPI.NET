@@ -1,4 +1,6 @@
-﻿using System.Text.Json.Serialization;
+﻿using AlegzaCRM.AlegzaAPI.Util;
+using System;
+using System.Text.Json.Serialization;
 
 namespace AlegzaCRM.AlegzaAPI.Model
 {
@@ -8,10 +10,12 @@ namespace AlegzaCRM.AlegzaAPI.Model
         public int Id { get; set; }
 
         [JsonPropertyName("created_at")]
-        public string CreatedAt { get; set; }
+        [JsonConverter(typeof(JsonStringDateTimeConverter))]
+        public DateTime? CreatedAt { get; set; }
 
         [JsonPropertyName("updated_at")]
-        public string UpdatedAt { get; set; }
+        [JsonConverter(typeof(JsonStringDateTimeConverter))]
+        public DateTime? UpdatedAt { get; set; }
 
         [JsonPropertyName("full_name")]
         public string FullName { get; set; }
@@ -50,13 +54,14 @@ namespace AlegzaCRM.AlegzaAPI.Model
         public string Notes { get; set; }
 
         [JsonPropertyName("housing_state")]
-        public string HousingState { get; set; }
+        public int HousingState { get; set; }
 
         [JsonPropertyName("helper_person_state")]
-        public string HelperPersonState { get; set; }
+        public int HelperPersonState { get; set; }
 
         [JsonPropertyName("deleted_at")]
-        public string DeletedAt { get; set; }
+        [JsonConverter(typeof(JsonStringDateTimeConverter))]
+        public DateTime? DeletedAt { get; set; }
 
         [JsonPropertyName("nickname")]
         public string Nickname { get; set; }
@@ -80,7 +85,7 @@ namespace AlegzaCRM.AlegzaAPI.Model
         public string Email { get; set; }
 
         [JsonPropertyName("user_id")]
-        public string UserId { get; set; }
+        public int UserId { get; set; }
 
         [JsonPropertyName("adoazonosito_jel")]
         public string AdoazonositoJel { get; set; }
@@ -95,7 +100,7 @@ namespace AlegzaCRM.AlegzaAPI.Model
         public string BirthName { get; set; }
 
         [JsonPropertyName("postal_code")]
-        public string PostalCode { get; set; }
+        public int PostalCode { get; set; }
 
         [JsonPropertyName("doc_idcard_number")]
         public string DocIdcardNumber { get; set; }

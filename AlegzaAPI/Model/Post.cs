@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AlegzaCRM.AlegzaAPI.Util;
+using System;
 using System.Text.Json.Serialization;
 
 namespace AlegzaCRM.AlegzaAPI.Model
@@ -21,7 +22,8 @@ namespace AlegzaCRM.AlegzaAPI.Model
         public int Type { get; set; }
 
         [JsonPropertyName("post_timestamp")]
-        public DateTime PostTimestamp { get; set; }
+        [JsonConverter(typeof(JsonStringDateTimeConverter))]
+        public DateTime? PostTimestamp { get; set; }
 
         [JsonPropertyName("message")]
         public string Message { get; set; }
@@ -33,6 +35,6 @@ namespace AlegzaCRM.AlegzaAPI.Model
         public string DeletedAt { get; set; }
 
         [JsonPropertyName("user_id")]
-        public string UserId { get; set; }
+        public int? UserId { get; set; }
     }
 }
