@@ -31,20 +31,20 @@ AlegzaAPI alegza = new(new Uri("https://test.alegza.hu"), "apitest@alegza.hu", "
 
 try
 {
-    Person newPerson = await alegza.NewPerson(new()
+    Person newPerson = alegza.NewPerson(new()
     {
         FullName = "API Személy",
         Age = 24,
         City = "Kecel",
         Phone = "+36803344556",
-        RelationshipState = 1
-    });
+        RelationshipState = 1,
+        PostalCode = 1024
+    }).GetAwaiter().GetResult();
 }
-catch (Exception exception)
+catch (APIException exception)
 {
-    Console.WriteLine($"{exception}");
+    Console.WriteLine($"Message: \"{exception.Message}\"\r\n\r\nErrors:\r\n{JsonSerializer.Serialize(exception.ErrorList, JsonSerializerOptions)}");
 }
-
 ```
 
 ### Modellek
@@ -58,11 +58,11 @@ Például egy bejegyzés lekéréséből `Post` típusú osztály jön létre:
 AlegzaCRM.AlegzaAPI.Model.Post
 {
     Id = 53,
-    CreatedAt = DateTime.Parse("2021-07-18 13:54:19"),
-    UpdatedAt = DateTime.Parse("2021-07-18 13:54:19"),
+    CreatedAt = "2021-07-18 13:54:19",
+    UpdatedAt = "2021-07-18 13:54:19",
     Person = 10606,
     Type = 3,
-    PostTimestamp = DateTime.Parse("2021-07-18 11:54:19"),
+    PostTimestamp = "2021-07-18 11:54:19",
     Message = "Visszahívást kért ma délutánra.",
     Success = null,
     DeletedAt = null,
