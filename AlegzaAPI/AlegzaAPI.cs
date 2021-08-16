@@ -211,7 +211,7 @@ namespace AlegzaCRM.AlegzaAPI
                 {
                     result = JsonSerializer.Deserialize<TResult>(data);
                 }
-                catch (JsonException ex)
+                catch (JsonException)
                 {
                     if (typeof(TResult).IsCollectionType()) throw;
                     var alegzaModel = JsonSerializer.Deserialize<AlegzaModel>(data);
@@ -235,7 +235,7 @@ namespace AlegzaCRM.AlegzaAPI
                 {
                     result = JsonSerializer.Deserialize<TResult>(data);
                 }
-                catch (JsonException ex)
+                catch (JsonException)
                 {
                     if (typeof(TResult).IsCollectionType()) throw;
                     var alegzaModel = JsonSerializer.Deserialize<AlegzaModel>(data);
@@ -258,7 +258,7 @@ namespace AlegzaCRM.AlegzaAPI
                 {
                     result = JsonSerializer.Deserialize<TResult>(data);
                 }
-                catch (JsonException ex)
+                catch (JsonException)
                 {
                     if (typeof(TResult).IsCollectionType()) throw;
                     var alegzaModel = JsonSerializer.Deserialize<AlegzaModel>(data);
@@ -282,7 +282,7 @@ namespace AlegzaCRM.AlegzaAPI
                 {
                     result = JsonSerializer.Deserialize<TResult>(data);
                 }
-                catch (JsonException ex)
+                catch (JsonException)
                 {
                     if (typeof(TResult).IsCollectionType()) throw;
                     var alegzaModel = JsonSerializer.Deserialize<AlegzaModel>(data);

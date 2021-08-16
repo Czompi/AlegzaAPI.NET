@@ -2,40 +2,39 @@
 using System;
 using System.Text.Json.Serialization;
 
-namespace AlegzaCRM.AlegzaAPI.Model
+namespace AlegzaCRM.AlegzaAPI.Model;
+
+public class PersonContract : AlegzaModel
 {
-    public class PersonContract : AlegzaModel
-    {
-        [JsonPropertyName("id")]
-        public int Id { get; set; }
+    [JsonPropertyName("id")]
+    public int Id { get; set; }
 
-        [JsonPropertyName("created_at")]
-        public string CreatedAt { get; set; }
+    [JsonPropertyName("created_at")]
+    public string CreatedAt { get; set; }
 
-        [JsonPropertyName("updated_at")]
-        public string UpdatedAt { get; set; }
+    [JsonPropertyName("updated_at")]
+    public string UpdatedAt { get; set; }
 
-        [JsonPropertyName("time")]
-        [JsonConverter(typeof(JsonStringDateTimeConverter))]
-        public DateTime? Time { get; set; }
+    [JsonPropertyName("time")]
+    [JsonConverter(typeof(JsonStringDateTimeConverter))]
+    public DateTime? Time { get; set; }
 
-        [JsonPropertyName("technical_start")]
-        [JsonConverter(typeof(JsonStringDateTimeConverter))]
-        public DateTime? TechnicalStart { get; set; }
+    [JsonPropertyName("technical_start")]
+    [JsonConverter(typeof(JsonStringDateTimeConverter))]
+    public DateTime? TechnicalStart { get; set; }
 
-        [JsonPropertyName("bond_number")]
-        public string BondNumber { get; set; }
+    [JsonPropertyName("bond_number")]
+    public string BondNumber { get; set; }
 
-        [JsonPropertyName("person")]
-        public int Person { get; set; }
+    [JsonPropertyName("person")]
+    public int Person { get; set; }
 
-        [JsonPropertyName("product")]
-        public PersonProduct Product { get; set; }
+    [JsonPropertyName("product")]
+    public PersonProduct Product { get; set; }
 
-        [JsonPropertyName("notes")]
-        public string Notes { get; set; }
+    [JsonPropertyName("notes")]
+    public string Notes { get; set; }
 
-        [JsonPropertyName("post")]
-        public string Post { get; set; }
-    }
+    [JsonPropertyName("post")]
+    public string Post { get; set; }
 }

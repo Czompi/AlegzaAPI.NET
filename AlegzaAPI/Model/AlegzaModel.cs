@@ -12,6 +12,8 @@ namespace AlegzaCRM.AlegzaAPI.Model
         public string ErrorMessage { get; set; }
 
         [JsonPropertyName("errors")]
+#pragma warning disable CS8632 // The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
         public IDictionary<string, ICollection<string>>? Errors { get; set; }
+#pragma warning restore CS8632 // The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
     }
 }

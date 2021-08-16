@@ -1,10 +1,9 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace AlegzaCRM.AlegzaAPI.Model
+namespace AlegzaCRM.AlegzaAPI.Model;
+
+public class Response : AlegzaModel
 {
-    public class Response : AlegzaModel
-    {
-        [JsonPropertyName("success")]
-        public bool Success { get; set; }
-    }
+    [JsonPropertyName("success")]
+    public bool Success { get; set; }
 }
